@@ -3,129 +3,425 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="output.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="output.css" />
+    <title>Instagram</title>
   </head>
-  <body class="bg-gray-100 font-sans antialiased">
-    <div class="flex h-screen overflow-hidden">
-      <!-- Sidebar -->
+  <body class="bg-white text-black font-sans antialiased">
+    <div class="flex min-h-screen">
+      <!-- ==========================================
+             LEFT SIDEBAR NAVIGATION (Instagram Format)
+             ========================================== -->
       <div
-        class="w-64 bg-gray-900 text-white flex flex-col justify-between hidden md:flex"
+        class="w-20 xl:w-60 bg-white border-r border-gray-200 fixed h-full flex flex-col justify-between p-3 xl:px-6 xl:py-8 z-50"
       >
-        <div>
-          <div class="p-5 flex items-center gap-2 border-b border-gray-800">
-            <div
-              class="w-8 h-8 bg-white text-black font-bold rounded flex items-center justify-center"
+        <div class="flex flex-col gap-8">
+          <!-- Wordmark Brand Logo -->
+          <div class="h-10 flex items-center px-2">
+            <h1
+              class="hidden xl:block text-2xl italic font-semibold font-serif tracking-wide select-none"
+              style="font-family: &quot;Grand Hotel&quot;, cursive, sans-serif"
             >
-              A
-            </div>
-            <span class="text-xl font-bold tracking-tight">AuthShield</span>
+              Instagram
+            </h1>
+            <i class="block xl:hidden fab fa-instagram text-2xl px-1"></i>
           </div>
-          <nav class="p-4 space-y-2">
+
+          <!-- Navigation Action Matrix -->
+          <nav class="flex flex-col gap-2">
             <a
               href="#"
-              class="flex items-center gap-3 px-4 py-2.5 bg-gray-800 rounded text-sm font-medium transition"
-              ><i class="fas fa-home"></i> Overview</a
+              class="flex items-center gap-4 p-3 hover:bg-gray-50 rounded-lg text-base font-semibold group transition"
             >
+              <i
+                class="fas fa-home text-xl group-hover:scale-105 transition"
+              ></i>
+              <span
+                class="hidden xl:inline font-normal group-hover:font-semibold"
+                >Home</span
+              >
+            </a>
             <a
               href="#"
-              class="flex items-center gap-3 px-4 py-2.5 text-gray-400 hover:bg-gray-800 hover:text-white rounded text-sm font-medium transition"
-              ><i class="fas fa-user"></i> Profile</a
+              class="flex items-center gap-4 p-3 hover:bg-gray-50 rounded-lg text-base font-normal group transition"
             >
+              <i
+                class="fas fa-search text-xl group-hover:scale-105 transition"
+              ></i>
+              <span class="hidden xl:inline group-hover:font-semibold"
+                >Search</span
+              >
+            </a>
             <a
               href="#"
-              class="flex items-center gap-3 px-4 py-2.5 text-gray-400 hover:bg-gray-800 hover:text-white rounded text-sm font-medium transition"
-              ><i class="fas fa-cog"></i> Settings</a
+              class="flex items-center gap-4 p-3 hover:bg-gray-50 rounded-lg text-base font-normal group transition"
             >
+              <i
+                class="far fa-compass text-xl group-hover:scale-105 transition"
+              ></i>
+              <span class="hidden xl:inline group-hover:font-semibold"
+                >Explore</span
+              >
+            </a>
+            <a
+              href="#"
+              class="flex items-center gap-4 p-3 hover:bg-gray-50 rounded-lg text-base font-normal group transition"
+            >
+              <i
+                class="fas fa-film text-xl group-hover:scale-105 transition"
+              ></i>
+              <span class="hidden xl:inline group-hover:font-semibold"
+                >Reels</span
+              >
+            </a>
+            <a
+              href="#"
+              class="flex items-center gap-4 p-3 hover:bg-gray-50 rounded-lg text-base font-normal group transition"
+            >
+              <i
+                class="far fa-paper-plane text-xl group-hover:scale-105 transition"
+              ></i>
+              <span class="hidden xl:inline group-hover:font-semibold"
+                >Messages</span
+              >
+            </a>
+            <a
+              href="#"
+              class="flex items-center gap-4 p-3 hover:bg-gray-50 rounded-lg text-base font-normal group transition"
+            >
+              <i
+                class="far fa-heart text-xl group-hover:scale-105 transition"
+              ></i>
+              <span class="hidden xl:inline group-hover:font-semibold"
+                >Notifications</span
+              >
+            </a>
+            <a
+              href="#"
+              class="flex items-center gap-4 p-3 hover:bg-gray-50 rounded-lg text-base font-normal group transition"
+            >
+              <i
+                class="far fa-plus-square text-xl group-hover:scale-105 transition"
+              ></i>
+              <span class="hidden xl:inline group-hover:font-semibold"
+                >Create</span
+              >
+            </a>
+            <a
+              href="#"
+              class="flex items-center gap-4 p-3 hover:bg-gray-50 rounded-lg text-base font-normal group transition"
+            >
+              <div
+                class="w-6 h-6 rounded-full bg-gradient-to-tr from-yellow-400 to-purple-600 p-[1.5px]"
+              >
+                <div class="w-full h-full bg-white rounded-full p-[1px]">
+                  <div
+                    class="w-full h-full bg-gray-300 rounded-full flex items-center justify-center text-[10px] font-bold text-gray-700"
+                  >
+                    U
+                  </div>
+                </div>
+              </div>
+              <span class="hidden xl:inline group-hover:font-semibold"
+                >Profile</span
+              >
+            </a>
           </nav>
         </div>
-        <!-- Log Out Button in Sidebar -->
-        <div class="p-4 border-t border-gray-800">
+
+        <!-- Log Out Component Positioned As Bottom Menu Option -->
+        <div class="pt-4 border-t border-gray-100">
           <button
             id="logoutBtn"
-            class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-sm font-medium transition"
+            class="w-full flex items-center gap-4 p-3 hover:bg-red-50 text-red-600 rounded-lg text-base font-medium transition group"
           >
-            <i class="fas fa-sign-out-alt"></i> Log Out
+            <i
+              class="fas fa-sign-out-alt text-xl group-hover:translate-x-0.5 transition"
+            ></i>
+            <span class="hidden xl:inline font-semibold">Log Out</span>
           </button>
         </div>
       </div>
 
-      <!-- Main Content Area -->
-      <div class="flex-1 flex flex-col overflow-y-auto">
-        <!-- Header -->
-        <header
-          class="bg-white border-b border-gray-200 p-4 flex justify-between items-center px-6 shadow-sm"
+      <!-- ==========================================
+             MAIN CONTENT LAYOUT SUBFRAME
+             ========================================== -->
+      <div class="flex-1 ml-20 xl:ml-60 flex justify-center pt-8 bg-white">
+        <div
+          class="w-full max-w-[935px] grid grid-cols-1 lg:grid-cols-3 gap-8 px-4"
         >
-          <h1 class="text-lg font-bold text-gray-800">Dashboard Workspace</h1>
-          <div class="flex items-center gap-3">
-            <div class="text-right">
-              <p class="text-xs font-semibold text-gray-900">User Account</p>
-              <p class="text-[10px] text-gray-500">Active Session</p>
-            </div>
+          <!-- Left Post Feed Stream -->
+          <div
+            class="col-span-1 lg:col-span-2 space-y-4 max-w-[470px] mx-auto w-full"
+          >
+            <!-- Stories Horizontal Deck -->
             <div
-              class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center font-bold text-sm text-gray-700"
+              class="flex gap-4 p-4 border border-gray-200 rounded-lg overflow-x-auto bg-white mb-4 scrollbar-none"
             >
-              U
+              <!-- Story Loop Mock Elements -->
+              <div
+                class="flex flex-col items-center gap-1 min-w-[66px] cursor-pointer"
+              >
+                <div
+                  class="w-[56px] h-[56px] rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-[2px]"
+                >
+                  <div class="w-full h-full bg-white rounded-full p-[2px]">
+                    <div
+                      class="w-full h-full bg-gray-200 rounded-full flex items-center justify-center text-xs font-bold text-gray-600"
+                    >
+                      auth
+                    </div>
+                  </div>
+                </div>
+                <span
+                  class="text-[11px] tracking-tight text-gray-500 truncate w-14 text-center"
+                  >authshield</span
+                >
+              </div>
+              <div
+                class="flex flex-col items-center gap-1 min-w-[66px] cursor-pointer"
+              >
+                <div
+                  class="w-[56px] h-[56px] rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-[2px]"
+                >
+                  <div class="w-full h-full bg-white rounded-full p-[2px]">
+                    <div
+                      class="w-full h-full bg-blue-100 rounded-full flex items-center justify-center text-xs font-bold text-blue-600"
+                    >
+                      tech
+                    </div>
+                  </div>
+                </div>
+                <span
+                  class="text-[11px] tracking-tight text-gray-500 truncate w-14 text-center"
+                  >supabase</span
+                >
+              </div>
+              <div
+                class="flex flex-col items-center gap-1 min-w-[66px] cursor-pointer"
+              >
+                <div class="w-[56px] h-[56px] rounded-full bg-gray-200 p-[2px]">
+                  <div class="w-full h-full bg-white rounded-full p-[2px]">
+                    <div
+                      class="w-full h-full bg-purple-100 rounded-full flex items-center justify-center text-xs font-bold text-purple-600"
+                    >
+                      ui
+                    </div>
+                  </div>
+                </div>
+                <span
+                  class="text-[11px] tracking-tight text-gray-500 truncate w-14 text-center"
+                  >tailwind</span
+                >
+              </div>
             </div>
-          </div>
-        </header>
 
-        <!-- Main Content Grid -->
-        <main class="p-6 max-w-7xl w-full mx-auto space-y-6">
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-            <h2 class="text-xl font-bold text-gray-900 mb-2">
-              Welcome to your secure area!
-            </h2>
-            <p class="text-sm text-gray-500">
-              You have successfully authenticated via Supabase. From here you
-              can manage your operational configurations, track session
-              telemetry, and securely interact with database layers.
-            </p>
+            <!-- Main Post Frame Card -->
+            <article
+              class="bg-white border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <!-- Post Header -->
+              <div
+                class="flex items-center justify-between p-3 border-b border-gray-100"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 to-purple-600 p-[1.5px]"
+                  >
+                    <div class="w-full h-full bg-white rounded-full p-[1px]">
+                      <div
+                        class="w-full h-full bg-gray-300 rounded-full flex items-center justify-center text-[10px] font-bold text-gray-700"
+                      >
+                        U
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-xs">
+                    <p
+                      id="userEmailDisplay"
+                      class="font-semibold text-gray-900"
+                    >
+                      User Account
+                    </p>
+                    <p class="text-gray-500 font-normal">
+                      Secure Session Active
+                    </p>
+                  </div>
+                </div>
+                <button class="text-gray-500 hover:text-black p-1">
+                  <i class="fas fa-ellipsis-h text-sm"></i>
+                </button>
+              </div>
+
+              <!-- Main Graphic Media Display Window -->
+              <div
+                class="bg-gray-50 aspect-square flex flex-col items-center justify-center border-b border-gray-100 p-8 text-center select-none"
+              >
+                <div
+                  class="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm border border-emerald-100"
+                >
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="font-semibold text-gray-900 text-base mb-1">
+                  Access Token Successfully Managed
+                </h3>
+                <p class="text-xs text-gray-400 max-w-xs leading-relaxed">
+                  Your application state successfully connected with the
+                  Supabase API tier.
+                </p>
+              </div>
+
+              <!-- Interactive Control Ribbon -->
+              <div class="p-3 space-y-2">
+                <div class="flex items-center justify-between text-xl">
+                  <div class="flex gap-4">
+                    <button class="hover:text-gray-500 transition">
+                      <i class="far fa-heart"></i>
+                    </button>
+                    <button class="hover:text-gray-500 transition">
+                      <i class="far fa-comment"></i>
+                    </button>
+                    <button class="hover:text-gray-500 transition">
+                      <i class="far fa-paper-plane"></i>
+                    </button>
+                  </div>
+                  <button class="hover:text-gray-500 transition">
+                    <i class="far fa-bookmark"></i>
+                  </button>
+                </div>
+
+                <!-- Metrics & Context Content Text Blocks -->
+                <div class="text-xs space-y-1">
+                  <p class="font-semibold text-gray-900">1,482 likes</p>
+                  <p class="text-gray-800 leading-normal">
+                    <span class="font-semibold mr-1.5" id="captionUser"
+                      >user_account</span
+                    >
+                    Authentication system is completely operational! Interface
+                    refactored into the modular visual architecture of Instagram
+                    Web desktop layouts.
+                  </p>
+                  <p
+                    class="text-[10px] text-gray-400 uppercase font-medium tracking-wide pt-1"
+                  >
+                    2 HOURS AGO
+                  </p>
+                </div>
+              </div>
+
+              <!-- Realtime Dynamic Comment Input Bar -->
+              <div
+                class="border-t border-gray-100 p-3 flex justify-between items-center bg-white"
+              >
+                <div class="flex items-center gap-3 w-full mr-2">
+                  <i
+                    class="far fa-smile text-lg text-gray-500 cursor-pointer hover:text-gray-700"
+                  ></i>
+                  <input
+                    type="text"
+                    placeholder="Add a comment..."
+                    class="w-full text-xs focus:outline-none placeholder-gray-400 text-gray-800"
+                  />
+                </div>
+                <button
+                  class="text-[#0095f6] text-xs font-semibold opacity-50 cursor-default hover:text-[#1877f2]"
+                >
+                  Post
+                </button>
+              </div>
+            </article>
           </div>
 
-          <!-- Stats Cards Layout -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div
-              class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm"
-            >
-              <p
-                class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1"
+          <!-- ==========================================
+                     RIGHT ASIDE PROFILE SUGGESTIONS PANELS 
+                     ========================================== -->
+          <div class="hidden lg:block space-y-4 pt-4 max-w-[320px]">
+            <!-- Primary Identity Panel -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-11 h-11 bg-gray-200 rounded-full flex items-center justify-center font-bold text-sm text-gray-700 border border-gray-300"
+                >
+                  U
+                </div>
+                <div class="text-xs">
+                  <p
+                    id="sideEmailDisplay"
+                    class="font-semibold text-gray-900 truncate w-36"
+                  >
+                    user_session
+                  </p>
+                  <p class="text-gray-400">System Operator</p>
+                </div>
+              </div>
+              <button
+                class="text-[#0095f6] hover:text-[#00376b] text-xs font-semibold transition"
               >
-                Security Health
-              </p>
-              <h3 class="text-2xl font-bold text-green-600">Optimal</h3>
+                Switch
+              </button>
             </div>
-            <div
-              class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm"
-            >
-              <p
-                class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1"
+
+            <!-- Section Categorization Label -->
+            <div class="flex justify-between items-center py-2">
+              <span class="text-xs font-semibold text-gray-400"
+                >Suggested for you</span
               >
-                Session Token
-              </p>
-              <h3 class="text-2xl font-bold text-gray-900">Active</h3>
+              <button
+                class="text-xs font-semibold text-gray-900 hover:text-gray-500"
+              >
+                See All
+              </button>
             </div>
-            <div
-              class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm"
-            >
-              <p
-                class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1"
-              >
-                Database Sync
-              </p>
-              <h3 class="text-2xl font-bold text-blue-600">Connected</h3>
+
+            <!-- Recommendation Loop Entries Layout -->
+            <div class="space-y-3.5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs font-bold"
+                  >
+                    <i class="fas fa-lock"></i>
+                  </div>
+                  <div class="text-xs">
+                    <p class="font-semibold text-gray-900">security_guard</p>
+                    <p class="text-[10px] text-gray-400">Follows you</p>
+                  </div>
+                </div>
+                <button
+                  class="text-[#0095f6] hover:text-black text-xs font-semibold transition"
+                >
+                  Follow
+                </button>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold"
+                  >
+                    <i class="fas fa-database"></i>
+                  </div>
+                  <div class="text-xs">
+                    <p class="font-semibold text-gray-900">supabase_db</p>
+                    <p class="text-[10px] text-gray-400">Popular</p>
+                  </div>
+                </div>
+                <button
+                  class="text-[#0095f6] hover:text-black text-xs font-semibold transition"
+                >
+                  Follow
+                </button>
+              </div>
             </div>
           </div>
-        </main>
+        </div>
       </div>
     </div>
 
-    <!-- Script triggers -->
+    <!-- Connect to Supabase CDN and custom logic -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="index.js"></script>
   </body>
 </html>

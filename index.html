@@ -4,177 +4,112 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="output.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <title>HomePage</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Instagram</title>
   </head>
-  <body>
-    <div class="min-h-screen bg-gray-50 flex flex-col antialiased font-sans">
-      <!-- Header / Navigation -->
-      <header
-        class="w-full bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between"
+  <body
+    class="bg-gray-50 flex flex-col min-h-screen justify-center items-center antialiased font-sans p-4"
+  >
+    <!-- Main Landing Card Container -->
+    <div class="w-full max-w-[350px] flex flex-col gap-2.5">
+      <!-- Primary Core Portal Card -->
+      <div
+        class="bg-white border border-gray-300 rounded-[1px] pt-12 pb-10 px-8 flex flex-col items-center text-center"
       >
-        <div class="flex items-center gap-2">
-          <!-- Minimalist Key/Shield Logo icon -->
-          <div
-            class="w-8 h-8 bg-black rounded flex items-center justify-center text-white font-bold text-lg"
-          >
-            A
-          </div>
-          <span class="font-bold text-gray-900 tracking-tight">AuthShield</span>
-        </div>
+        <!-- Instagram Styled Logo -->
+        <h1
+          class="text-4xl font-serif italic font-semibold mb-6 tracking-wide text-gray-900 select-none cursor-default"
+          style="font-family: &quot;Grand Hotel&quot;, cursive, sans-serif"
+        >
+          Instagram
+        </h1>
 
-        <nav class="flex items-center gap-6">
-          <a
-            href="#"
-            class="text-sm font-medium text-gray-600 hover:text-gray-900 transition"
-            >Documentation</a
-          >
-          <a
-            href="#"
-            class="text-sm font-medium text-gray-600 hover:text-gray-900 transition"
-            >Pricing</a
-          >
+        <!-- Short App Description -->
+        <p
+          class="text-sm font-medium text-gray-400 max-w-[240px] mb-8 leading-relaxed"
+        >
+          Log in to see photos and videos from your friends or create an account
+          to get started.
+        </p>
+
+        <!-- Navigation Action Buttons Matrix -->
+        <div class="w-full space-y-3">
           <a
             href="login.html"
-            class="text-sm font-medium text-gray-900 border border-gray-300 rounded px-3 py-1.5 hover:bg-gray-50 transition"
-            >Sign In</a
+            class="block w-full bg-[#0095f6] hover:bg-[#1877f2] text-white text-sm font-semibold py-2 rounded-[4px] transition-all tracking-wide text-center shadow-sm"
           >
-        </nav>
-      </header>
+            Log In
+          </a>
 
-      <!-- Main Content Hero Split Section -->
-      <main class="flex-1 grid grid-cols-1 lg:grid-cols-2">
-        <!-- Left Column: Value Proposition -->
-        <div
-          class="flex flex-col justify-center px-8 sm:px-16 lg:px-24 py-12 bg-white"
-        >
-          <div class="max-w-xl">
-            <!-- Status Indicator Pill -->
-            <div
-              class="inline-flex items-center gap-2 bg-gray-100 border border-gray-200 text-xs font-medium text-gray-800 px-2.5 py-1 rounded-full mb-6"
-            >
-              <span
-                class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"
-              ></span>
-              Enterprise-grade security active
-            </div>
-
-            <h1
-              class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight mb-4 leading-tight"
-            >
-              Identity infrastructure for modern platforms.
-            </h1>
-
-            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-              A secure, deliberate, and compliant authentication framework.
-              Implement multi-factor logic, single sign-on tokens, and complete
-              session management in minutes.
-            </p>
-
-            <!-- Call to Action Buttons -->
-            <div
-              class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3"
-            >
-              <button
-                class="bg-black text-white px-6 py-3 rounded font-medium shadow-sm hover:bg-gray-950 transition text-center"
-              >
-                <a href="register.html">Get Started Free</a>
-              </button>
-              <button
-                class="border border-gray-300 text-gray-700 px-6 py-3 rounded font-medium hover:bg-gray-50 transition text-center"
-              >
-                Schedule a Demo
-              </button>
-            </div>
-
-            <!-- Trust / Compliances Bar -->
-            <div class="mt-12 pt-8 border-t border-gray-100">
-              <p
-                class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3"
-              >
-                Compliance Certified
-              </p>
-              <div class="flex gap-4 text-xs font-bold text-gray-500">
-                <span
-                  class="px-2 py-1 bg-gray-50 border border-gray-200 rounded"
-                  >SOC 2 TYPE II</span
-                >
-                <span
-                  class="px-2 py-1 bg-gray-50 border border-gray-200 rounded"
-                  >GDPR COMPLIANT</span
-                >
-                <span
-                  class="px-2 py-1 bg-gray-50 border border-gray-200 rounded"
-                  >ISO 27001</span
-                >
-              </div>
-            </div>
-          </div>
+          <a
+            href="register.html"
+            class="block w-full bg-transparent border border-gray-300 hover:bg-gray-50 text-gray-700 text-sm font-semibold py-2 rounded-[4px] transition-all tracking-wide text-center"
+          >
+            Create New Account
+          </a>
         </div>
 
-        <!-- Right Column: Structured Interface Preview -->
-        <div
-          class="hidden lg:flex items-center justify-center bg-gray-50 border-l border-gray-200 p-12"
-        >
-          <div
-            class="w-full max-w-md bg-white border border-gray-200 rounded-xl shadow-sm p-6"
+        <!-- Decorative Divider Element -->
+        <div class="w-full flex items-center justify-between my-6">
+          <div class="h-[1px] bg-gray-200 w-full"></div>
+          <span
+            class="text-[10px] font-bold text-gray-300 uppercase mx-3 tracking-widest"
+            >Secure Entry</span
           >
-            <div
-              class="flex items-center justify-between border-b border-gray-100 pb-4 mb-4"
-            >
-              <div class="flex items-center gap-2">
-                <div class="w-3 h-3 rounded-full bg-gray-200"></div>
-                <div class="w-3 h-3 rounded-full bg-gray-200"></div>
-                <div class="w-3 h-3 rounded-full bg-gray-200"></div>
-              </div>
-              <span class="text-xs text-gray-400 font-mono"
-                >session_manager.sh</span
-              >
-            </div>
-
-            <!-- Simulated Dashboard / Tech Look -->
-            <div class="space-y-4">
-              <div
-                class="p-3 bg-gray-50 rounded border border-gray-100 flex items-center justify-between"
-              >
-                <span class="text-sm font-mono text-gray-600"
-                  >MFA Verification Code</span
-                >
-                <span
-                  class="text-sm font-bold tracking-widest text-emerald-600 font-mono"
-                  >842-195</span
-                >
-              </div>
-              <div
-                class="p-3 bg-gray-50 rounded border border-gray-100 flex items-center justify-between"
-              >
-                <span class="text-sm font-mono text-gray-600"
-                  >JWT Token Expiry</span
-                >
-                <span class="text-sm text-gray-900 font-mono">15:00 min</span>
-              </div>
-              <div
-                class="p-3 bg-gray-50 rounded border border-gray-100 flex items-center justify-between"
-              >
-                <span class="text-sm font-mono text-gray-600"
-                  >Webhook Handshake</span
-                >
-                <span
-                  class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded"
-                  >SUCCESS</span
-                >
-              </div>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-gray-100 text-center">
-              <span class="text-xs text-gray-400"
-                >Ready to handle production workloads out of the box.</span
-              >
-            </div>
-          </div>
+          <div class="h-[1px] bg-gray-200 w-full"></div>
         </div>
-      </main>
+
+        <!-- Meta Platform Brand Subtitle -->
+        <div class="flex items-center gap-1.5 text-xs text-gray-400">
+          <i class="fab fa-meta text-xs"></i>
+          <span class="font-semibold tracking-wide uppercase text-[10px]"
+            >Powered by Supabase</span
+          >
+        </div>
+      </div>
+
+      <!-- Quick Context Info Bottom Banner -->
+      <div
+        class="bg-white border border-gray-300 rounded-[1px] py-4 text-center text-xs text-gray-400 px-4"
+      >
+        By entering this application, you agree to our structural styling
+        guidelines and data simulation terms.
+      </div>
     </div>
+
+    <!-- Layout Footer Links Section -->
+    <footer
+      class="mt-16 text-[12px] text-gray-400 flex flex-wrap justify-center gap-4 max-w-lg text-center px-4"
+    >
+      <a href="#" class="hover:underline">Meta</a>
+      <a href="#" class="hover:underline">About</a>
+      <a href="#" class="hover:underline">Blog</a>
+      <a href="#" class="hover:underline">Jobs</a>
+      <a href="#" class="hover:underline">API</a>
+      <a href="#" class="hover:underline">Privacy</a>
+      <a href="#" class="hover:underline">Terms</a>
+      <p class="w-full mt-2 text-gray-400">© 2026 Instagram from Meta</p>
+    </footer>
+
+    <!-- Connect to Supabase CDN and routing handler rules logic -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="index.js"></script>
+    <script>
+      // Quick Frontend check: If user already has a valid active login session,
+      // automatically bypass this landing screen and fast-track them straight into the dashboard.
+      document.addEventListener("DOMContentLoaded", async () => {
+        if (typeof supabaseClient !== "undefined") {
+          const {
+            data: { session },
+          } = await supabaseClient.auth.getSession();
+          if (session) {
+            window.location.href = "dashboard.html";
+          }
+        }
+      });
+    </script>
   </body>
 </html>

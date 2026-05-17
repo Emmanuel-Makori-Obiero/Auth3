@@ -26,7 +26,6 @@ async function handleSignUp(email, password) {
   } else {
     console.log("Supabase SignUp Success:", data);
 
-    // Check if email confirmation is required based on what Supabase returned
     if (
       data.user &&
       data.user.identities &&
@@ -80,7 +79,6 @@ async function handleLogout() {
 // =========================================================================
 document.addEventListener("DOMContentLoaded", async () => {
   // --- A. PROTECT THE DASHBOARD (Session Security Guard) ---
-  // Checks if the user is allowed to be on the dashboard.html page
   const isDashboardPage = window.location.pathname.includes("dashboard.html");
 
   if (isDashboardPage) {
@@ -89,7 +87,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       error,
     } = await supabaseClient.auth.getSession();
 
-    // If no active session exists, or they haven't confirmed their email, boot them out!
     if (error || !session) {
       console.warn(
         "Unauthorized access intercepted. Redirecting to login window...",
@@ -98,13 +95,21 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
 
-    // Optional: Dynamically change the placeholder "User Account" header text to their real email
-    const profileText = document.querySelector(
-      ".text-xs.font-semibold.text-gray-900",
-    );
-    if (profileText && session.user) {
-      profileText.textContent = session.user.email;
-    }
+    // Parse the user's email into a clean handle representation for Instagram styling
+    const rawEmail = session.user.email;
+    const cleanHandle = rawEmail
+      .split("@")[0]
+      .toLowerCase()
+      .replace(/[^a-z0-9_]/g, "_");
+
+    // Inject user handles into Instagram layout display sections dynamically
+    const mainHeaderDisplay = document.getElementById("userEmailDisplay");
+    const captionUserDisplay = document.getElementById("captionUser");
+    const sidebarProfileDisplay = document.getElementById("sideEmailDisplay");
+
+    if (mainHeaderDisplay) mainHeaderDisplay.textContent = cleanHandle;
+    if (captionUserDisplay) captionUserDisplay.textContent = cleanHandle;
+    if (sidebarProfileDisplay) sidebarProfileDisplay.textContent = cleanHandle;
   }
 
   // --- B. REGISTER & LOGIN FORMS LISTENER ---

